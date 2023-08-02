@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shophub/screens/home/homescreen.dart';
+import 'package:shophub/screens/export_screens.dart';
 
 class AppRouter {
   static Route onGenerateRoute(RouteSettings settings) {
@@ -10,6 +10,14 @@ class AppRouter {
         return HomePage.route();
       case HomePage.routeName:
         return HomePage.route();
+      case CartScreen.routeName:
+        return CartScreen.route();
+      case CatalogScreen.routeName:
+        return CatalogScreen.route();
+      case ProductScreen.routeName:
+        return ProductScreen.route();
+      case WishliistScreen.routeName:
+        return WishliistScreen.route();
 
       default:
         return _errorRoute();
@@ -19,7 +27,11 @@ class AppRouter {
   static Route _errorRoute() {
     return MaterialPageRoute(
       settings: const RouteSettings(name: '/error'),
-      builder: (_) => Scaffold(appBar: AppBar(title: const Text('Error'),),),
+      builder: (_) => Scaffold(
+        appBar: AppBar(
+          title: const Text('Error'),
+        ),
+      ),
     );
   }
 }

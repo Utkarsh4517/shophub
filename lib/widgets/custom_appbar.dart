@@ -16,7 +16,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: Text(title),
       centerTitle: true,
       actions: [
-        IconButton(onPressed: () {}, icon: const Icon(FeatherIcons.heart))
+        IconButton(onPressed: () {Navigator.pushNamed(context, '/wishlist');}, icon: const Icon(FeatherIcons.heart))
       ],
     );
   }
