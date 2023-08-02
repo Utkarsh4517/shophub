@@ -29,6 +29,7 @@ class HomePage extends StatelessWidget {
           autoPlay: true,
           aspectRatio: 1.8,
           enlargeCenterPage: true,
+          enlargeStrategy: CenterPageEnlargeStrategy.height
         ),
         items: Category.categories
             .map((category) => HeroCorouselCard(category: category))
