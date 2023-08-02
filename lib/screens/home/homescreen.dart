@@ -24,17 +24,15 @@ class HomePage extends StatelessWidget {
         title: 'Shophub',
       ),
       bottomNavigationBar: const CustomNavBar(),
-      body: Container(
-        child: CarouselSlider(
-          options: CarouselOptions(
-            autoPlay: true,
-            aspectRatio: 2.0,
-            enlargeCenterPage: true,
-          ),
-          items: Category.categories
-              .map((category) => HeroCorouselCard(category: category))
-              .toList(),
+      body: CarouselSlider(
+        options: CarouselOptions(
+          autoPlay: true,
+          aspectRatio: 2.0,
+          enlargeCenterPage: true,
         ),
+        items: Category.categories
+            .map((category) => HeroCorouselCard(category: category))
+            .toList(),
       ),
     );
   }
