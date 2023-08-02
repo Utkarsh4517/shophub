@@ -1,29 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:shophub/screens/export_screens.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context){
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        useMaterial3: true
-      ),
-      home: HomePage(),
-    );
-  }
-}
+  const MyApp({super.key});
 
-class HomePage extends StatelessWidget{
   @override
-  Widget build(BuildContext context){
-    return Scaffold(
-      appBar: AppBar(),
-      bottomNavigationBar: BottomAppBar(),
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      theme: ThemeData(useMaterial3: true),
+      home: const HomePage(),
     );
   }
 }
