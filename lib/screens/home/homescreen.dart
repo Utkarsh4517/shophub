@@ -26,12 +26,11 @@ class HomePage extends StatelessWidget {
       bottomNavigationBar: const CustomNavBar(),
       body: CarouselSlider(
         options: CarouselOptions(
-          autoPlay: true,
-          aspectRatio: 1.8,
-          enlargeCenterPage: true,
-          viewportFraction: 0.9,
-          enlargeStrategy: CenterPageEnlargeStrategy.height
-        ),
+            autoPlay: true,
+            aspectRatio: 1.8,
+            enlargeCenterPage: true,
+            viewportFraction: 0.9,
+            enlargeStrategy: CenterPageEnlargeStrategy.height),
         items: Category.categories
             .map((category) => HeroCorouselCard(category: category))
             .toList(),
@@ -79,11 +78,9 @@ class HeroCorouselCard extends StatelessWidget {
                       vertical: 10.0, horizontal: 20.0),
                   child: Text(
                     category.name,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: Theme.of(context).textTheme.displaySmall!.copyWith(
+                          color: Colors.white,
+                        ),
                   ),
                 ),
               ),
