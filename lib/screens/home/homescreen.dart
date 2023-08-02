@@ -2,6 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:shophub/widgets/export_widgets.dart';
 
 class HomePage extends StatelessWidget {
+  // defining route name
+  static const String routeName = '/';
+
+  // defing the route() method
+  static Route route() {
+    return MaterialPageRoute(
+      settings: const RouteSettings(name: routeName),
+      builder: (_) => const HomePage(),
+    );
+  }
+
   const HomePage({super.key});
 
   @override

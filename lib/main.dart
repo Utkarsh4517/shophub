@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shophub/routes/routes.dart';
 import 'package:shophub/screens/export_screens.dart';
 
 void main() {
@@ -14,7 +15,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(useMaterial3: true),
-      home: const HomePage(),
+      onGenerateRoute: AppRouter.onGenerateRoute,
+      initialRoute: HomePage.routeName,
     );
   }
 }
