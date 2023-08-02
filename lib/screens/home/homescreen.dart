@@ -27,7 +27,7 @@ class HomePage extends StatelessWidget {
       body: CarouselSlider(
         options: CarouselOptions(
           autoPlay: true,
-          aspectRatio: 2.0,
+          aspectRatio: 1.8,
           enlargeCenterPage: true,
         ),
         items: Category.categories
