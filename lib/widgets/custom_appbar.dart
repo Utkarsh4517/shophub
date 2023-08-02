@@ -1,6 +1,5 @@
 import 'package:feather_icons/feather_icons.dart';
 import 'package:flutter/material.dart';
-
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   const CustomAppBar({
@@ -13,10 +12,14 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       backgroundColor: Colors.transparent,
       elevation: 0,
-      title: Text(title),
+      title: Text(title, style: Theme.of(context).textTheme.displayMedium),
       centerTitle: true,
       actions: [
-        IconButton(onPressed: () {Navigator.pushNamed(context, '/wishlist');}, icon: const Icon(FeatherIcons.heart))
+        IconButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/wishlist');
+            },
+            icon: const Icon(FeatherIcons.heart))
       ],
     );
   }
