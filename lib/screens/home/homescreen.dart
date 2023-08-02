@@ -29,6 +29,7 @@ class HomePage extends StatelessWidget {
           autoPlay: true,
           aspectRatio: 1.8,
           enlargeCenterPage: true,
+          viewportFraction: 0.9,
           enlargeStrategy: CenterPageEnlargeStrategy.height
         ),
         items: Category.categories
