@@ -24,18 +24,24 @@ class HomePage extends StatelessWidget {
         title: 'Shophub',
       ),
       bottomNavigationBar: const CustomNavBar(),
-      body: CarouselSlider(
-        options: CarouselOptions(
-            autoPlay: true,
-            aspectRatio: 1.8,
-            enlargeCenterPage: true,
-            viewportFraction: 0.9,
-            enlargeStrategy: CenterPageEnlargeStrategy.height),
-        items: Category.categories
-            .map((category) => HeroCorouselCard(category: category))
-            .toList(),
+      body: Column(
+        children: [
+          CarouselSlider(
+            options: CarouselOptions(
+                autoPlay: true,
+                aspectRatio: 1.8,
+                enlargeCenterPage: true,
+                viewportFraction: 0.9,
+                enlargeStrategy: CenterPageEnlargeStrategy.height),
+            items: Category.categories
+                .map((category) => HeroCorouselCard(category: category))
+                .toList(),
+          ),
+          const SectionTitle(title: 'Recommended',),
+        ],
       ),
     );
   }
 }
+
 
