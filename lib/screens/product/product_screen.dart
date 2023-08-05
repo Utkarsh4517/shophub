@@ -27,6 +27,7 @@ class ProductScreen extends StatelessWidget {
         title: product.name,
       ),
       bottomNavigationBar: const CustomNavBar(),
+      body: HeroCorouselCard(product: product),
     );
   }
 }

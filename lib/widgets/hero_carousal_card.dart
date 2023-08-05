@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:shophub/models/export_models.dart';
 
 class HeroCorouselCard extends StatelessWidget {
-  final Category category;
+  final Category? category;
+  final Product? product;
   const HeroCorouselCard({
-    required this.category,
+    this.product,
+    this.category,
     super.key,
   });
 
@@ -12,11 +14,13 @@ class HeroCorouselCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.pushNamed(
-          context,
-          '/catalog',
-          arguments: category,
-        );
+        if (this.product == null) {
+          Navigator.pushNamed(
+            context,
+            '/catalog',
+            arguments: category,
+          );
+        }
       },
       child: Container(
         margin: const EdgeInsets.all(5.0),
@@ -25,7 +29,7 @@ class HeroCorouselCard extends StatelessWidget {
             child: Stack(
               children: <Widget>[
                 Image.network(
-                  category.imageUrl,
+                  product == null ? category!.imageUrl : product!.imageUrl,
                   fit: BoxFit.cover,
                   width: 1000.0,
                 ),
@@ -47,7 +51,7 @@ class HeroCorouselCard extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(
                         vertical: 10.0, horizontal: 20.0),
                     child: Text(
-                      category.name,
+                      product == null ? category!.name : product!.name,
                       style: Theme.of(context).textTheme.displaySmall!.copyWith(
                             color: Colors.white,
                           ),
