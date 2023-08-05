@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shophub/models/export_models.dart';
 import 'package:shophub/widgets/export_widgets.dart';
 
 class ProductScreen extends StatelessWidget {
@@ -6,22 +7,26 @@ class ProductScreen extends StatelessWidget {
   static const String routeName = '/product';
 
   // defing the route() method
-  static Route route() {
+  static Route route({required Product product}) {
     return MaterialPageRoute(
       settings: const RouteSettings(name: routeName),
-      builder: (_) => const ProductScreen(),
+      builder: (_) => ProductScreen(product: product),
     );
   }
 
-  const ProductScreen({super.key});
+  final Product product;
+  const ProductScreen({
+    required this.product,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       appBar: CustomAppBar(
-        title: 'Product',
+        title: product.name,
       ),
-      bottomNavigationBar: CustomNavBar(),
+      bottomNavigationBar: const CustomNavBar(),
     );
   }
 }
