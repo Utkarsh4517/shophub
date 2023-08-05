@@ -37,7 +37,8 @@ class HomePage extends StatelessWidget {
                 .map((category) => HeroCorouselCard(category: category))
                 .toList(),
           ),
-          const SectionTitle(title: 'Recommended',),
+          const SectionTitle(title: 'Recommended'),
+          ProductCard(product: Product.products[0],)
         ],
       ),
     );
