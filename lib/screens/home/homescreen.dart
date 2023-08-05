@@ -38,11 +38,14 @@ class HomePage extends StatelessWidget {
                 .toList(),
           ),
           const SectionTitle(title: 'Recommended'),
-          ProductCard(product: Product.products[0],)
+          // ProductCard(
+          //   product: Product.products[0],
+          // ),
+          ProductCarousel(
+            products: Product.products,
+          )
         ],
       ),
     );
   }
 }
-
-
