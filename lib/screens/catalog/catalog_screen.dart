@@ -28,6 +28,24 @@ class CatalogScreen extends StatelessWidget {
         title: category.name,
       ),
       bottomNavigationBar: const CustomNavBar(),
+      body: GridView.builder(
+        padding: EdgeInsets.symmetric(
+          horizontal: getScreenWidth(context) * 0.04,
+          vertical: getScreenWidth(context) * 0.05,
+        ),
+        itemCount: 3,
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          // childAspectRatio: 1.15,
+        ),
+        itemBuilder: (BuildContext context, int index) {
+          return Center(
+            child: ProductCard(
+              product: Product.products[index],
+            ),
+          );
+        },
+      ),
     );
   }
 }
