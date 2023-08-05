@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shophub/models/export_models.dart';
 import 'package:shophub/widgets/export_widgets.dart';
 
 class CatalogScreen extends StatelessWidget {
@@ -6,22 +7,27 @@ class CatalogScreen extends StatelessWidget {
   static const String routeName = '/catalog';
 
   // defing the route() method
-  static Route route() {
+  static Route route({required Category category}) {
     return MaterialPageRoute(
       settings: const RouteSettings(name: routeName),
-      builder: (_) => const CatalogScreen(),
+      builder: (_) => CatalogScreen(category: category),
     );
   }
 
-  const CatalogScreen({super.key});
+  final Category category;
+
+  const CatalogScreen({
+    required this.category,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       appBar: CustomAppBar(
-        title: 'Cart',
+        title: category.name,
       ),
-      bottomNavigationBar: CustomNavBar(),
+      bottomNavigationBar: const CustomNavBar(),
     );
   }
 }
