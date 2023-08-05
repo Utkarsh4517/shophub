@@ -22,7 +22,7 @@ class ProductCard extends StatelessWidget {
             decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.all(Radius.circular(20))),
-            width: getScreenWidth(context) * 0.3,
+            width: getScreenWidth(context) * 0.32,
             height: getScreenWidth(context) * 0.43,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,29 +33,30 @@ class ProductCard extends StatelessWidget {
                     bottomRight: const Radius.circular(0),
                   ),
                   child: Image.network(
-                    Product.products[0].imageUrl,
+                    product.imageUrl,
                     fit: BoxFit.cover,
                     height: getScreenWidth(context) * 0.3,
-                    width: getScreenWidth(context) * 0.3,
+                    width: getScreenWidth(context) * 0.32,
                   ),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Padding(
                           padding: const EdgeInsets.only(left: 8.0),
                           child: Text(
-                            Product.products[0].name,
+                            product.name,
                             style: Theme.of(context).textTheme.bodyLarge,
                           ),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(left: 8.0),
                           child: Text(
-                            '${Product.products[0].price}',
+                            '${product.price}',
                             style: Theme.of(context).textTheme.bodyLarge,
                           ),
                         ),
