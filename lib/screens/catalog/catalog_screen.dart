@@ -23,6 +23,7 @@ class CatalogScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<Product> categoryProducts = Product.products.where((product) => product.category == category.name).toList();
     return Scaffold(
       appBar: CustomAppBar(
         title: category.name,
@@ -33,7 +34,7 @@ class CatalogScreen extends StatelessWidget {
           horizontal: getScreenWidth(context) * 0.04,
           vertical: getScreenWidth(context) * 0.05,
         ),
-        itemCount: 3,
+        itemCount: categoryProducts.length,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           // childAspectRatio: 1.15,
@@ -41,7 +42,8 @@ class CatalogScreen extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           return Center(
             child: ProductCard(
-              product: Product.products[index],
+              product: categoryProducts[index],
+              widthFactor: 0.4,
             ),
           );
         },

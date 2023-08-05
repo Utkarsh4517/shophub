@@ -5,7 +5,9 @@ import 'package:shophub/widgets/export_widgets.dart';
 
 class ProductCard extends StatelessWidget {
   final Product product;
+  final double widthFactor;
   const ProductCard({
+    this.widthFactor = 0.32,
     required this.product,
     super.key,
   });
@@ -22,7 +24,7 @@ class ProductCard extends StatelessWidget {
             decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.all(Radius.circular(20))),
-            width: getScreenWidth(context) * 0.32,
+            width: getScreenWidth(context) * widthFactor,
             height: getScreenWidth(context) * 0.43,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -36,7 +38,7 @@ class ProductCard extends StatelessWidget {
                     product.imageUrl,
                     fit: BoxFit.cover,
                     height: getScreenWidth(context) * 0.3,
-                    width: getScreenWidth(context) * 0.32,
+                    width: getScreenWidth(context) * widthFactor,
                   ),
                 ),
                 Row(
