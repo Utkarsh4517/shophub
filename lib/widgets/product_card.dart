@@ -6,8 +6,10 @@ import 'package:shophub/widgets/export_widgets.dart';
 class ProductCard extends StatelessWidget {
   final Product product;
   final double widthFactor;
+  final bool isWishlist;
   const ProductCard({
     this.widthFactor = 0.32,
+    this.isWishlist = false,
     required this.product,
     super.key,
   });
@@ -72,13 +74,29 @@ class ProductCard extends StatelessWidget {
                           ),
                         ],
                       ),
-                      IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            FeatherIcons.plusCircle,
-                            color: Colors.black,
-                            size: getScreenWidth(context) * 0.05,
-                          ))
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              FeatherIcons.plusCircle,
+                              color: Colors.black,
+                              size: getScreenWidth(context) * 0.05,
+                            ),
+                          ),
+                          isWishlist
+                              ? IconButton(
+                                  onPressed: () {},
+                                  icon: Icon(
+                                    FeatherIcons.minusCircle,
+                                    color: Colors.black,
+                                    size: getScreenWidth(context) * 0.05,
+                                  ),
+                                )
+                              : const SizedBox()
+                        ],
+                      ),
                     ],
                   ),
                 ],
